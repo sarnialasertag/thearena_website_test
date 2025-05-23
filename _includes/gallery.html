@@ -1,0 +1,19 @@
+<div class="container">
+
+<div class="section">
+		{% if include.title %}
+			<h2 class="sparkle-heading">
+			  <img src="assets/images/sparkle_01.svg" alt="" class="sparkle-icon">
+			  <span>{{ include.title }}</span>
+			  <img src="assets/images/sparkle_02.svg" alt="" class="sparkle-icon">
+			</h2>
+		{% endif %}
+  <div class="photo-gallery">
+    {% for image in include.images %}
+      <img src="{{ image.url }}" alt="{{ image.alt | default: 'Gallery image' }}">
+    {% endfor %}
+  </div>
+</div>
+
+
+</div>

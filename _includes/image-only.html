@@ -1,0 +1,19 @@
+<!-- _includes/image-only.html -->
+<div class="container">
+  {% if include.title %}
+			<h2 class="sparkle-heading">
+			  <img src="assets/images/sparkle_01.svg" alt="" class="sparkle-icon">
+			  <span>{{ include.title }}</span>
+			  <img src="assets/images/sparkle_02.svg" alt="" class="sparkle-icon">
+			</h2>
+  {% endif %}
+<div class="section image-only">
+
+
+  {% if include.img %}
+    <img src="{{ include.img }}" alt="{{ include.alt | default: include.title }}" style="width: {{ include.width }} !important;">
+  {% endif %}
+</div>
+
+
+</div>

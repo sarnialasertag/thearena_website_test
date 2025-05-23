@@ -1,0 +1,41 @@
+<div class="container">
+	{% assign has_bg = include.bg | strip %}
+	<div class="hero {% if has_bg == "" %}{% endif %}" style="
+	  {% if has_bg != "" %}
+		background-image: url('{{ include.bg }}');
+		background-size: cover;
+		background-position: center;
+	  {% else %}
+
+	background-image:
+radial-gradient(circle at 72% 15%, var(--arena-purple) 0px, transparent 50%),
+radial-gradient(circle at 12% 88%, var(--arena-magenta) 0px, transparent 100%),
+radial-gradient(circle at 50% 25%, var(--arena-deep-yellow) 0px, transparent 50%),
+radial-gradient(circle at 95% 95%, var(--arena-purple) 20px, transparent 100%);
+
+
+
+	  {% endif %}
+	  text-align: center;
+	  color: var(--white);
+	">
+		{% if include.img and include.img != "" %}
+		  <img src="{{ include.img | strip }}">
+		{% endif %}
+
+	  
+	  {% if include.title %}
+		<h1>{{ include.title }}</h1>
+	  {% endif %}
+
+	  {% if include.paragraph %}
+		<p>{{ include.paragraph }}</p>
+	  {% endif %}
+
+	  {% assign btn_text = include.button | strip %}
+	  {% assign btn_url = include.button_url | strip %}
+	  {% if btn_text != "" and btn_url != "" %}
+		<a href="{{ btn_url }}" class="button">{{ btn_text }}</a>
+	  {% endif %}
+	</div>
+</div>

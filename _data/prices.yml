@@ -1,0 +1,72 @@
+# Walk-In Prices
+- category: walkin
+  name: "Mini Golf"
+  title: "$10 per person"
+  description: One round 10-hole mini golf
+  image: assets/images/icons/golf_flat_colour.svg
+
+- category: walkin
+  name: "Laser Tag"
+  title: "$14 per person"
+  description: 20 minute game of laser tag
+  image: assets/images/icons/tag_flat_colour.svg
+
+- category: walkin
+  name: "Laser Tag"
+  title: "$16 per person"
+  description: 30 minute game of laser tag
+  image: assets/images/icons/tag_flat_colour.svg
+
+- category: walkin
+  name: "Rock Climbing"
+  title: "$16 per person"
+  description: 3 rock climbs
+  image: assets/images/icons/climb_flat_colour.svg
+
+- category: walkin
+  name: "Rock Climbing"
+  title: "$20 per person"
+  description: 30 minutes of rock climbs
+  image: assets/images/icons/climb_flat_colour.svg
+
+- category: walkin
+  name: "Rock Climbing"
+  title: "$25 per person"
+  description: One hour of rock climbs
+  image: assets/images/icons/climb_flat_colour.svg
+
+# Group Packages
+- category: group
+  name: "Keep in mind!"
+  title: ""
+  description: Groups must have 6 people minimum. Pricing is per person.
+  image: assets/images/icons/group_flat_colour.svg
+
+- category: group
+  name: "Double Trouble"
+  title: "$26 per person"
+  description: |
+    <ul class="icon-list">
+      <li>Two 20 minute games of laser tag</li>
+    </ul>
+  image: assets/images/icons/1_flat_colour.svg
+
+- category: group
+  name: "Climb & Conquer"
+  title: "$32 per person"
+  description: |
+    <ul class="icon-list">
+      <li>Two 20 minute games of laser tag</li>
+      <li>Two rock climbs</li>
+    </ul>
+  image: assets/images/icons/2_flat_colour.svg
+
+- category: group
+  name: "Putt & Play"
+  title: "$32 per person"
+  description: |
+    <ul class="icon-list">
+      <li>Two 20 minute games of laser tag</li>
+      <li>One round of 10-hole mini golf</li>
+    </ul>
+  image: assets/images/icons/3_flat_colour.svg

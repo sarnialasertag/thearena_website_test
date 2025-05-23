@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Starter Site Template</title>
+<style>
+:root {
+    --arena-purple: #44148f;
+    --arena-magenta: #990099;
+    --background: #fafafa;
+    --text: #090909;
+    --white: #fff;
+	
+    --arena-purple: #44148f;
+    --arena-dark-purple: #320775;
+
+    --arena-pink: #ffb0db;
+	--arena-green: #d5de58;
+    --arena-light-gray: #eee;
+    --arena-black: #090909;
+    --arena-black-30: rgba(9, 9, 9, 0.43);
+    --arena-dark-blue: #14088e;
+    --arena-light-blue: #8ac2d9;
+    --arena-blue: #3292e0;
+    --arena-lavender: #be95ff;
+    --arena-deep-purple: #8b40ff;
+    --arena-light-purple: #d0a4e1;
+    --arena-teal: #6cf7f3;
+    --arena-dark-gray: #333;
+    --arena-yellow: #edf763;	
+	
+    --border-radius: 10px;
+    --h1-color: var(--arena-purple);
+    --h2-color: var(--arena-purple);
+    --h3-color: var(--arena-purple);
+    --h1-size: 2rem;
+    --h2-size: 1.75rem;
+    --h3-size: 1.25rem;	
+}
+
+
+h1,
+h2,
+h3 {
+  text-shadow: 3px 3px 0px var(--arena-black-30);
+  margin-top: 0px;
+}
+
+.column h1,
+.column h2,
+.column h3 {
+  text-shadow: none;
+  margin-top: 0px;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.nav a:hover {
+    color: var(--arena-yellow);
+}
+
+/* Text-only links (non-buttons, non-CTA) */
+.text-only a:not(.button):not(.cta a) {
+    color: var(--arena-blue);
+    text-decoration: none;
+}
+
+.text-only a:not(.button):not(.cta a):hover {
+    color: var(--arena-yellow);
+}
+
+/* Column links (non-buttons, non-CTA) */
+.column a:not(.button):not(.cta a) {
+    color: var(--arena-blue);
+    text-decoration: none;
+}
+
+.column a:not(.button):not(.cta a):hover {
+    color: var(--arena-yellow);
+}
+
+/* CTA links */
+.cta a {
+    background: var(--white);
+    color: var(--arena-magenta);
+    padding: 12px 25px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid var(--arena-black);
+}
+
+.cta a:hover {
+    background: #eee;
+}
+
+/* Button links */
+.button {
+    display: inline-block;
+    background: var(--arena-magenta);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    border: 1px solid var(--arena-black);
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #b300b3;
+}
+
+
+/* Reusable icon list (can go anywhere) */
+.icon-feature {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.icon-feature li {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.icon-feature li::before {
+    content: "\ea46"; /* circle check icon */
+    font-family: 'boxicons';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--arena-green);
+    font-size: 24px;
+}
+
+.icon-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.icon-list li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 16px;
+}
+
+.icon-list li::before {
+    content: "\e9dd"; /* bx-cross icon */
+    font-family: 'boxicons';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--arena-magenta);
+    font-size: 22px;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--arena-dark-purple);
+    margin: 0;
+    padding: 0;
+    color: var(--white);
+	font-family: Roboto Mono;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+footer {
+    background: var(--arena-purple);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+}
+
+.site-header {
+    padding: 30px 20px;
+}
+
+
+
+.header-inner {
+    background: var(--arena-purple);
+    border-radius: 24px;
+    padding: 20px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo h1 {
+    color: var(--white);
+    font-size: 28px;
+    margin: 0;
+}
+
+.logo h1 span {
+    font-weight: bold;
+}
+
+.logo p {
+    color: #aaa;
+    font-size: 12px;
+    margin: 5px 0 0 0;
+}
+
+.logo img {
+	max-width: 250px;
+}
+
+header h1, footer p {
+    margin: 0;
+    font-weight: normal;
+}
+
+.section {
+    margin-bottom: 60px;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: var(--white);
+	font-family: Bricolage Grotesque;
+}
+
+
+.text-only {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.text-image {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.text-image.reverse {
+    flex-direction: row-reverse;
+}
+
+.text-image img {
+    width: 400px;
+    max-width: 100%;
+    border-radius: var(--border-radius);
+}
+
+.text-image .text {
+    flex: 1;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.image-only img {
+    width: 100%;
+    border-radius: var(--border-radius);
+}
+
+/* Global Column Style */
+.column {
+    background: var(--white);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+	color: var(--text);
+}
+
+.columns-2 {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.column h2 {
+  color: var(--arena-purple);
+}
+
+.columns-3 {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.columns-3 .column {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.columns-3 .column img {
+    max-width: 320px;
+	height: auto;
+    margin-bottom: 20px;
+    border-radius: 50%;
+}
+
+.columns-3 .column h3 {
+    font-size: 28px;
+    margin-bottom: 12px;
+    color: var(--arena-purple);
+	font-family: Bricolage Grotesque;
+}
+
+.columns-3 .column p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.columns-3 .column .button {
+    margin-top: auto;
+}
+
+.flexible-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+	color: var(--text);
+}
+
+.flexible-grid .item {
+    background: var(--white);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+
+/* Pricing Grid */
+.pricing-grid h3 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+	margin-top: 0px;
+    position: relative;
+    color: var(--arena-purple);
+	font-family: Bricolage Grotesque;
+}
+
+.pricing-grid h3::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 10px;
+    background: #a9d3ff;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    border-radius: 5px;
+}
+
+.pricing-items {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.pricing-item {
+    text-align: center;
+}
+
+.pricing-item img {
+    width: 100px;
+    margin-bottom: 15px;
+}
+
+.pricing-item strong {
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.pricing-item p {
+    font-family: monospace;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Hero Section */
+.hero {
+	background-color: var(--arena-purple);
+    color: var(--white);
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h2 {
+    font-size: 55px;
+    margin: 0 0 20px;
+	font-family: Bricolage Grotesque;
+}
+
+.hero p {
+    font-size: 20px;
+    margin: 0;
+}
+
+/* Photo Gallery (Masonry/Columns) */
+.photo-gallery {
+    column-count: 4;
+    column-gap: 20px;
+}
+
+.photo-gallery img {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+    display: block;
+    break-inside: avoid;
+}
+
+@media (max-width: 1000px) {
+    .photo-gallery {
+        column-count: 3;
+    }
+}
+
+@media (max-width: 700px) {
+    .photo-gallery {
+        column-count: 2;
+    }
+}
+
+/* CTA Block */
+.cta {
+    background: var(--arena-magenta);
+    color: var(--white);
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: var(--border-radius);
+}
+
+.cta h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+	font-family: Bricolage Grotesque;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form label {
+    font-weight: bold;
+    color: var(--arena-purple);
+}
+
+form input,
+form textarea {
+    padding: 12px;
+    border: 1px solid var(--arena-black);
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: 16px;
+    background: #fff;
+    color: var(--arena-black);
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--arena-magenta);
+    box-shadow: 0 0 0 3px rgba(153, 0, 153, 0.2);
+}
+
+form button {
+    align-self: flex-start;
+	font-family: inherit;
+}
+
+
+/* Testimonial */
+.testimonial {
+    background: var(--white);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    text-align: center;
+    font-style: italic;
+	color: var(--text);
+}
+
+.testimonial strong {
+    display: block;
+    margin-top: 20px;
+    font-style: normal;
+    font-weight: bold;
+    color: var(--arena-purple);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    font-size: 26px;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    background: var(--arena-purple);
+    transition: right 0.3s ease;
+    padding: 40px 20px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.mobile-menu.open {
+    right: 0;
+}
+
+.mobile-menu-header {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: var(--white);
+    cursor: pointer;
+    margin: 0;
+}
+
+.mobile-menu-header span {
+    cursor: pointer;
+}
+
+.mobile-nav {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.mobile-nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.mobile-nav a:hover {
+    color: var(--arena-magenta);
+}
+
+@media (max-width: 800px) {
+    .nav.desktop-nav {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .section h2 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .text-image img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .text-image {
+        flex-direction: column !important;
+        gap: 10px;
+    }
+
+    .columns-2,
+    .columns-3,
+    .flexible-grid,
+    .pricing-items {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .columns-3 .column,
+    .columns-2 .column,
+    .flexible-grid .item,
+    .pricing-item {
+        padding: 20px;
+    }
+
+    .cta {
+        padding: 40px 20px;
+    }
+
+    .cta h2 {
+        font-size: 24px;
+    }
+
+    .cta a {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .testimonial {
+        padding: 30px 20px;
+        font-size: 16px;
+    }
+
+    .testimonial strong {
+        margin-top: 15px;
+    }
+
+}
+
+</style>
+      <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+	  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <div class="logo">
+			<img src="https://sarnialasertag.com/images/logo_tagline.svg">
+        </div>
+        <nav class="nav desktop-nav">
+            <a href="#">Activities</a>
+            <a href="#">Prices</a>
+            <a href="#">Promotions</a>
+            <a href="#">Book Online</a>
+            <a href="#">eGift Cards</a>
+            <a href="#">Contact Us</a>
+        </nav>
+
+        <div class="mobile-menu-toggle" onclick="toggleMenu()">☰</div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <span onclick="toggleMenu()">✕</span>
+        </div>
+        <nav class="mobile-nav">
+            <a href="#">Activities</a>
+            <a href="#">Prices</a>
+            <a href="#">Promotions</a>
+            <a href="#">Book Online</a>
+            <a href="#">eGift Cards</a>
+            <a href="#">Contact Us</a>
+        </nav>
+    </div>
+</header>
+
+
+
+<!-- HERO SECTION -->
+<div class="hero">
+    <h2>Welcome to The Arena</h2>
+    <p>Laser Tag. Mini Golf. Rock Climbing. Endless Fun.</p>
+</div>
+
+<div class="container">
+
+    <!-- TEXT ONLY -->
+    <div class="section text-only">
+        <h2 class="headershadow">Text Only</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula, nunc sit amet feugiat tempus, erat erat ultrices nibh, vel fermentum nulla elit vitae nulla. <a href="">blah blah blah</a></p>
+            <a href="#" class="button">Learn More</a>
+    </div>
+
+    <!-- TEXT WITH IMAGE (LEFT) -->
+    <div class="section text-image">
+        <img src="https://placehold.co/400x300" alt="Sample Image">
+        <div class="text">
+            <h2>Text with Image (Left)</h2>
+            <p>This block has text and an image on the left. Resize the window to see it stack on mobile.</p>
+            <a href="#" class="button">Learn More</a>
+        </div>
+    </div>
+
+    <!-- TEXT WITH IMAGE (RIGHT) -->
+    <div class="section text-image reverse">
+        <img src="https://placehold.co/400x300" alt="Sample Image">
+        <div class="text">
+            <h2>Text with Image (Right)</h2>
+            <p>This block has the image on the right and text on the left. On mobile, they stack.</p>
+            <a href="#" class="button">Learn More</a>
+        </div>
+    </div>
+
+    <!-- IMAGE ONLY -->
+    <div class="section image-only">
+        <h2>Image Only</h2>
+        <img src="https://placehold.co/1200x500" alt="Full width image">
+    </div>
+
+    <!-- TWO COLUMN WITH PRICING GRID -->
+    <div class="section columns-2">
+        <div class="column">
+            <h2>About Our Activities</h2>
+            <p>Enjoy exciting activities with flexible pricing and fun for all ages. Whether you're here for mini golf, laser tag, or rock climbing, there's something for everyone.</p>
+            <p><a href="">See the current walk-in rates below.</a></p>
+			<!-- FEATURE LIST -->
+<div class="section feature-list">
+  <h2>Why Choose The Arena?</h2>
+  <ul class="icon-feature">
+    <li>Exciting activities for all ages</li>
+    <li>Affordable walk-in prices</li>
+    <li>Indoor fun all year round</li>
+    <li>Safe, supervised environment</li>
+    <li>Perfect for birthdays and events</li>
+  </ul>
+</div>
+			<a href="" class="button">View Rates</a>
+        </div>
+        <div class="column pricing-grid">
+            <h3>Walk-In Prices</h3>
+            <div class="pricing-items">
+                <div class="pricing-item"><img src="https://placehold.co/100x100"><strong>$10 per person</strong><p>One round 10-hole mini golf</p></div>
+                <div class="pricing-item"><img src="https://placehold.co/100x100"><strong>$14 per person</strong><p>20 minute game of laser tag</p></div>
+                <div class="pricing-item"><img src="https://placehold.co/100x100"><strong>$16 per person</strong><p>30 minute game of laser tag</p></div>
+                <div class="pricing-item"><img src="https://placehold.co/100x100"><strong>$16 per person</strong><p>3 rock climbs</p></div>
+                <div class="pricing-item"><img src="https://placehold.co/100x100"><strong>$20 per person</strong><p>30 minutes of rock climbs</p></div>
+                <div class="pricing-item"><img src="https://placehold.co/100x100"><strong>$25 per person</strong><p>One hour of rock climbs</p></div>
+            </div>
+        </div>
+    </div>
+<!-- FEATURE LIST -->
+<div class="section feature-list">
+  <h2>Why Choose The Arena?</h2>
+  <ul class="icon-feature">
+    <li>Exciting activities for all ages</li>
+    <li>Affordable walk-in prices</li>
+    <li>Indoor fun all year round</li>
+    <li>Safe, supervised environment</li>
+    <li>Perfect for birthdays and events</li>
+  </ul>
+</div>
+    <!-- THREE COLUMN -->
+	<div class="section columns-3">
+		<div class="column">
+			<img src="https://sarnialasertag.com/images/hero/minigolf-hero.webp" alt="">
+			<h3>Mini Golf</h3>
+			<p>Relax and have fun with our 10-hole mini golf course perfect for all ages.</p>
+				<ul class="icon-list">
+				  <li>Indoor course</li>
+				  <li>Colourful obstacles</li>
+				  <li>Family friendly</li>
+				</ul>
+			<a href="#" class="button">View Pricing</a>
+		</div>
+		<div class="column">
+			<img src="https://sarnialasertag.com/images/hero/lasertag-hero.webp" alt="">
+			<h3>Laser Tag</h3>
+			<p>Challenge your friends in our multi-level laser tag arena filled with adventure.</p>
+				<ul class="icon-list">
+				  <li>Indoor course</li>
+				  <li>Colourful obstacles</li>
+				  <li>Family friendly</li>
+				</ul>
+			<a href="#" class="button">View Pricing</a>
+		</div>
+		<div class="column">
+			<img src="https://sarnialasertag.com/images/hero/rockclimb-hero.webp" alt="">
+			<h3>Rock Climbing</h3>
+			<p>Reach new heights with beginner to advanced rock climbing walls.</p>
+				<ul class="icon-list">
+				  <li>Indoor course</li>
+				  <li>Colourful obstacles</li>
+				  <li>Family friendly</li>
+				</ul>
+			<a href="#" class="button">View Pricing</a>
+		</div>
+	</div>
+
+    <!-- FLEXIBLE GRID -->
+    <div class="section flexible-grid">
+        <div class="item">Grid Item 1</div>
+        <div class="item">Grid Item 2</div>
+        <div class="item">Grid Item 3</div>
+        <div class="item">Grid Item 4</div>
+    </div>
+
+    <!-- BENTO / MASONRY STYLE GRID -->
+	<div class="section">
+		<h2>Photo Gallery</h2>
+		<div class="photo-gallery">
+			<img src="https://placehold.co/600x400" alt="">
+			<img src="https://placehold.co/400x600" alt="">
+			<img src="https://placehold.co/600x300" alt="">
+			<img src="https://placehold.co/400x400" alt="">
+			<img src="https://placehold.co/400x500" alt="">
+			<img src="https://placehold.co/400x400" alt="">
+			<img src="https://placehold.co/400x400" alt="">
+			<img src="https://placehold.co/400x400" alt="">
+		</div>
+	</div>
+
+    <!-- CALL TO ACTION -->
+    <div class="section cta">
+        <h2>Ready to Play?</h2>
+        <a href="#">Book Your Visit</a>
+    </div>
+	
+	<!-- FORM COMPONENT -->
+<div class="section column">
+  <h2>Contact Us</h2>
+  <form action="https://formspree.io/f/movdwwvg" method="POST">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="_replyto" required>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="6" required></textarea>
+
+    <button type="submit" class="button">Send Message</button>
+  </form>
+</div>
+
+
+    <!-- TESTIMONIAL -->
+    <div class="section testimonial">
+        <p>"An amazing place to spend the day with friends and family! We'll definitely be back."</p>
+        <strong>- Happy Customer</strong>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2025 Starter Site. All rights reserved.</p>
+</footer>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!-- _includes/text-image.html -->
+<div class="container">
+	<div class="section text-image{% if include.reverse == true %} reverse{% endif %}">
+	  <img src="{{ include.img }}" alt="{{ include.title }}">
+	  <div class="text">
+		{% if include.title %}
+			<h2 class="sparkle-heading">
+			  <img src="assets/images/sparkle_01.svg" alt="" class="sparkle-icon">
+			  <span>{{ include.title }}</span>
+			  <img src="assets/images/sparkle_02.svg" alt="" class="sparkle-icon">
+			</h2>
+		{% endif %}
+
+		{% if include.paragraph %}
+		  <p>{{ include.paragraph }}</p>
+		{% endif %}
+
+		{% assign btn_text = include.button | strip %}
+		{% assign btn_url = include.button_url | strip %}
+		{% if btn_text != "" and btn_url != "" %}
+		  <a href="{{ btn_url }}" class="button">{{ btn_text }}</a>
+		{% endif %}
+	  </div>
+	</div>
+
+</div>
+
+

@@ -1,0 +1,42 @@
+<div class="container">
+ <div class="text">
+		{% if include.title %}
+			<h2 class="sparkle-heading">
+			  <img src="assets/images/sparkle_01.svg" alt="" class="sparkle-icon">
+			  <span>{{ include.title }}</span>
+			  <img src="assets/images/sparkle_02.svg" alt="" class="sparkle-icon">
+			</h2>
+		{% endif %}
+    {% if include.section_desc %}
+      <p>{{ include.section_desc }}</p>
+    {% endif %}
+ </div>
+<div class="section columns-2">
+  <div class="column">
+    {% if include.left_title %}
+      <h2>{{ include.left_title }}</h2>
+    {% endif %}
+
+    {% if include.left_include %}
+      {% include {{ include.left_include }} category=include.left_category title=include.left_grid_title %}
+    {% elsif include.left_content %}
+      {{ include.left_content }}
+    {% endif %}
+  </div>
+
+  <div class="column">
+    {% if include.right_title %}
+      <h2>{{ include.right_title }}</h2>
+    {% endif %}
+
+    {% if include.right_include %}
+      {% include {{ include.right_include }} category=include.right_category title=include.right_grid_title %}
+    {% elsif include.right_content %}
+      {{ include.right_content }}
+    {% endif %}
+  </div>
+</div>
+
+
+
+</div>
